@@ -13,7 +13,7 @@
 
 / {
 	compatible = "seirobotics,sei610", "amlogic,sm1";
-	model = "SEI Robotics SEI610";
+	model = "Armbian aml-s9xx-box u-boot s905x3";
 
 	aliases {
 		serial0 = &uart_AO;
