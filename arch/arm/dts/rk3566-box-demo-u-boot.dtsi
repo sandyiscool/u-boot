@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+
+#include "rk356x-u-boot.dtsi"
+
+/ {
+	chosen {
+		stdout-path = &uart3;
+	};
+};
+
+&uart3 {
+	bootph-all;
+	status = "okay";
+};
+
+&pinctrl {
+	status="okay";
+};
+
+&uart3m0_xfer {
+	status="okay";
+};
+
+&sdhci {
+	status = "okay";
+};
+
+&sdmmc0 {
+	status = "okay";
+};
+

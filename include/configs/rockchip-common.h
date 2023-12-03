@@ -13,6 +13,19 @@
 
 #ifndef CONFIG_SPL_BUILD
 
+#ifndef BOOT_TARGET_DEVICES
+#define BOOT_TARGET_DEVICES(func) \
+	func(MMC, mmc, 0) \
+	func(MMC, mmc, 1) \
+	BOOT_TARGET_DEVICES_USB(func) \
+	BOOT_TARGET_NVME(func) \
+	BOOT_TARGET_SCSI(func) \
+	func(PXE, pxe, na) \
+	func(DHCP, dhcp, na)
+#endif
+
+#include <config_distro_bootcmd.h>
+
 #define BOOT_TARGETS	"mmc1 mmc0 nvme scsi usb pxe dhcp spi"
 
 #ifdef CONFIG_ARM64
